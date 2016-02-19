@@ -30,7 +30,8 @@ class RMAForm{
             "First name",
             ValidForm::VFORM_STRING,
             array("required" => true),
-            array("required" => "This field is required"));
+            array("required" => "This field is required",
+                  ""));
 
         $this->form->addField(
             "last_name",
@@ -134,41 +135,43 @@ class RMAForm{
 
     public function valid(){
 
-        if($this->form->isSubmitted() && $this->form->isValid()){
+        // if($this->form->isValid()){
 
-            if(wp_verify_nonce($this->form->getValidField("wp_nonce")->getValid())){
+            // if(wp_verify_nonce($this->form->getValidField("wp_nonce")->getValid())){
 
-                return true;
-            }
-        }
+            //     return true;
+            // }
 
-        return false;
+            return true;
+        // }
+
+        // return false;
     }
 
     public function complete(){
 
         $rmaPost = new modules\rma\util\RMAPost();
 
-        $rma->setFirstName($this->form->getValidField("first_name"));
-        $rma->setLastName($this->form->getValidField("last_name"));
+        $rma->setFirstName($this->form->getValidField("first_name")->getValid());
+        $rma->setLastName($this->form->getValidField("last_name")->getValid());
 
-        $rma->setEmail($this->form->getValidField("email"));
-        $rma->setPhoneNumber($this->form->getValidField("phone"));
+        $rma->setEmail($this->form->getValidField("email")->getValid());
+        $rma->setPhoneNumber($this->form->getValidField("phone")->getValid());
 
-        $rma->setAddressLine($this->form->getValidField("addressLine"));
-        $rma->setAddressLine2($this->form->getValidField("addressLine2"));
+        $rma->setAddressLine($this->form->getValidField("addressLine")->getValid());
+        $rma->setAddressLine2($this->form->getValidField("addressLine2")->getValid());
 
-        $rma->setTown($this->form->getValidField("town"));
-        $rma->setCounty($this->form->getValidField("county"));
-        $rma->setPostcode($this->form->getValidField("postcode"));
+        $rma->setTown($this->form->getValidField("town")->getValid());
+        $rma->setCounty($this->form->getValidField("county")->getValid());
+        $rma->setPostcode($this->form->getValidField("postcode")->getValid());
 
-        $rma->setDatePurchase($this->form->getValidField("date_purchase"));
+        $rma->setDatePurchase($this->form->getValidField("date_purchase")->getValid());
 
-        $rma->setProduct($this->form->getValidField("product-return"));
-        $rma->setProductSerial($this->form->getValidField("serial"));
+        $rma->setProduct($this->form->getValidField("product-return")->getValid());
+        $rma->setProductSerial($this->form->getValidField("serial")->getValid());
 
-        $rma->setReasonForReturn($this->form->getValidField("reason"));
-        $rma->setAdditional($this->form->getValidField("additional"));
+        $rma->setReasonForReturn($this->form->getValidField("reason")->getValid());
+        $rma->setAdditional($this->form->getValidField("additional")->getValid());
 
         $rma->commit();
 

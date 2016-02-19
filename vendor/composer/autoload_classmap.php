@@ -466,6 +466,7 @@ return array(
     'modules\\util\\CurrencyMapping' => $baseDir . '/include/modules/util/CurrencyMapping.php',
     'shortcode\\rma\\RMAFormSC' => $baseDir . '/include/shortcodes/rma/RMAFormSC.php',
     'shortcodes\\library\\Shortcode' => $baseDir . '/include/shortcodes/library/Shortcode.php',
+    'shortcodes\\rma\\form\\RMAComplete' => $baseDir . '/include/shortcodes/rma/form/RMAComplete.php',
     'shortcodes\\rma\\form\\RMAForm' => $baseDir . '/include/shortcodes/rma/form/RMAForm.php',
     'shortcodes\\rma\\util\\HTTP' => $baseDir . '/include/shortcodes/rma/util/HTTP.php',
     'shortcodes\\rma\\util\\ProductQuery' => $baseDir . '/include/shortcodes/rma/util/ProductQuery.php',

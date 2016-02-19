@@ -30,9 +30,9 @@ class RMAFormSC extends Shortcode{
 
         $rmaForm = new RMAForm();
 
-        echo "Form " . $rmaForm->valid();
+        $html = $rmaForm->getForm();
 
-        if($rmaForm->valid()){
+        if($rmaForm->valid() == true){
             //form completed.
 
             //create the RMA form and enter it into the database.
@@ -40,14 +40,13 @@ class RMAFormSC extends Shortcode{
             $rmaPost = new modules\rma\util\RMAPost($id);
 
             //send email to the customer what info about to how to handle RMA progress.
-            $this->sendEmail($rmaPost);
+            // $this->sendEmail($rmaPost);
 
             //show a message to the customer with the RMA id.
-            $this->completeMessage($rmaPost);
-
+            // $this->completeMessage($rmaPost);
         }else {
 
-            $rmaForm->getForm();
+            echo $html;
         }
     }
 }
