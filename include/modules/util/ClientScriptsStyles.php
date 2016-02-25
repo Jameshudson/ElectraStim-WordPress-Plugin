@@ -8,25 +8,21 @@
 
 namespace modules\util;
 
-
 class ClientScriptsStyles{
 
     public function __construct(){
 
-        add_action("wp_enqueue_scripts", array($this, "register_style"));
+        add_action("wp_enqueue_scripts", array($this, "wp_register_style"));
+        add_action("admin_enqueue_scripts", array($this, "admin_register_style"));
     }
 
-    public function register_style(){
+    public function admin_register_style(){
 
-        //importing css.
-        wp_register_style( 'electrastim-plugin-css', plugins_url( 'electrastim/res/main.css' ) );
         //admin css.
-        wp_register_style( 'electrastim-plugi-admin-css', plugins_url( 'electrastim/res/main-admin.css' ) );
+        wp_register_style( 'electrastim-plugi-admin-css', plugins_url( 'electrastim/res/admin-main.css' ) );
 
-        //importing javasrcipt.
-        wp_register_script( "electrastim-plugin-js", plugins_url( 'electrastim/res/main.js' ), NULL, NULL, true );
         //admin js.
-        wp_register_script( "electrastim-plugin-admin-js", plugins_url( 'electrastim/res/main-admin.js' ), NULL, NULL, true );
+        wp_register_script( "electrastim-plugin-admin-js", plugins_url( 'electrastim/res/admin-main.js' ), NULL, NULL, true );
 
         //checking if backend.
         if(is_admin()){
@@ -35,6 +31,15 @@ class ClientScriptsStyles{
             wp_enqueue_style( 'electrastim-plugi-admin-css' );
             wp_enqueue_script("electrastim-plugin-admin-js");
         }
+    }
+
+    public function wp_register_style(){
+
+        //importing css.
+        wp_register_style( 'electrastim-plugin-css', plugins_url( 'electrastim/res/main.css' ) );
+
+        //importing javasrcipt.
+        wp_register_script( "electrastim-plugin-js", plugins_url( 'electrastim/res/main.js' ), NULL, NULL, true );
 
         //adding styles and scripts.
         wp_enqueue_style( 'electrastim-plugin-css' );
