@@ -15,6 +15,7 @@ abstract class PluginSettings{
     const PAGE = "general";
 
     private $id;
+    private $htmlName;
     private $name;
 
     public abstract function init();
@@ -36,46 +37,49 @@ abstract class PluginSettings{
     }
 
     public function getEnabled(){
-        return get_option($this->id . "-enable");
+        return get_option($this->htmlName, false);
     }
 
     public function superInit(){
 
+        $this->htmlName = $this->getId() . "-enable";
+
         add_settings_section(
-            $this->id,
-            $this->name,
-            array($this, "renderSettings"),
+            $this->getId(), 
+            $this->getName(), 
+            array($this , "doSetting"), 
             $this::PAGE);
 
-        //enable button.
         add_settings_field(
-            $this->id . "-enable",
-            $this->name . " enable",
-            array($this, "customFieldSettings"),
-            $this::PAGE,
-            $this->id);
+            $this->htmlName, 
+            $this->getName() . " enable", 
+            array($this, "enablePlugin"), 
+            $this::PAGE, 
+            $this->getId(), 
+            array("Check this option to enable " . $this->getName()));
 
-        register_setting(
-            $this->id,
-            $this->name . "-enable"
-        );
 
-        add_action("admin_menu", array($this, "doSetting"));
+        add_action("admin_init", array($this , "register"));
+    }
+
+    public function register(){
+
+        register_setting($this::PAGE, $this->htmlName);
     }
 
     public function doSetting(){
 
-        settings_fields($this->id . "-enable");
-        do_settings_sections($this->id);
+        // settings_fields( $this->getId() );
+        // do_settings_sections( $this->getId() );
     }
 
-    public function renderSettings($args){
+    public function enablePlugin($args){
 
-    }
+        // echo "<p>option </p>" . get_option($this->htmlName);
 
-    public function customFieldSettings(){
-
-        echo '<input type="checkbox" id="' . $this->name . '-enable" name="' . $this->name . '-enable" value="1" ' . checked(1, get_option($this->id . "-enable"), false) . '/>';
-        echo '<label for="' . $this->name . "-enable" .'"> '  . "Enable " . $this->name . '</label>';
+        // Note the ID and the name attribute of the element match that of the ID in the call to add_settings_field
+        echo '<input type="checkbox" id="'. $this->htmlName .'" name="'. $this->htmlName .'" value="1" ' . checked(1, get_option($this->htmlName), false) . '/>'; 
+         
+        echo'<label for="'. $this->htmlName .'"> '  . $args[0] . '</label>'; 
     }
 }
