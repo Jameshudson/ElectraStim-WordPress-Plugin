@@ -1,0 +1,1 @@
+(function(){this.Presenter=function(){var n;return document.ready=function(){return n()},n=function(){return alert("hello")}}()}).call(this);

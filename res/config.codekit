@@ -8,12 +8,75 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/admin-coffee\/admin-main.coffee",
-		"minifyOutput": 1,
+		"minifyOutput": 0,
 		"outputAbbreviatedPath": "\/admin-main.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 1,
 		"outputStyle": 0,
+		"syntaxCheckerStyle": 0
+		},
+	"\/admin-coffee\/product_list\/Main.coffee": {
+		"createSourceMap": 0,
+		"fileType": 32,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/admin-coffee\/product_list\/Main.coffee",
+		"minifyOutput": 1,
+		"outputAbbreviatedPath": "\/admin-coffee\/product_list\/Main.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 0
+		},
+	"\/admin-coffee\/product_list\/Model.coffee": {
+		"createSourceMap": 0,
+		"fileType": 32,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/admin-coffee\/product_list\/Model.coffee",
+		"minifyOutput": 1,
+		"outputAbbreviatedPath": "\/admin-coffee\/product_list\/Model.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 0
+		},
+	"\/admin-coffee\/product_list\/Presenter.coffee": {
+		"createSourceMap": 0,
+		"fileType": 32,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/admin-coffee\/product_list\/Presenter.coffee",
+		"minifyOutput": 1,
+		"outputAbbreviatedPath": "\/admin-coffee\/product_list\/Presenter.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"syntaxCheckerStyle": 0
+		},
+	"\/admin-coffee\/product_list\/Presenter.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/admin-coffee\/product_list\/Presenter.js",
+		"outputAbbreviatedPath": "\/admin-coffee\/product_list\/min\/Presenter-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
+		},
+	"\/admin-coffee\/product_list\/View.coffee": {
+		"createSourceMap": 0,
+		"fileType": 32,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/admin-coffee\/product_list\/View.coffee",
+		"minifyOutput": 1,
+		"outputAbbreviatedPath": "\/admin-coffee\/product_list\/View.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 0
 		},
 	"\/admin-main.css": {
 		"fileType": 16,
@@ -60,6 +123,38 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/admin-scss\/modules\/all.scss",
 		"outputAbbreviatedPath": "\/admin-scss\/css\/all.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/admin-scss\/modules\/product_list\/all.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 10,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/admin-scss\/modules\/product_list\/all.scss",
+		"outputAbbreviatedPath": "\/admin-scss\/modules\/css\/all.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/admin-scss\/modules\/product_list\/forms.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 10,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/admin-scss\/modules\/product_list\/forms.scss",
+		"outputAbbreviatedPath": "\/admin-scss\/modules\/css\/forms.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -201,6 +296,34 @@
 	],
 "lastSavedByUser": "Andrew Smith",
 "manualImportLinks": {
+	"\/admin-coffee\/admin-main.coffee": [
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/admin-coffee\/product_list\/Main.coffee",
+			"position": 0,
+			"type": 0
+			}
+		],
+	"\/admin-coffee\/product_list\/Main.coffee": [
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/admin-coffee\/product_list\/Model.coffee",
+			"position": 0,
+			"type": 0
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/admin-coffee\/product_list\/Presenter.coffee",
+			"position": 1,
+			"type": 0
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/admin-coffee\/product_list\/View.coffee",
+			"position": 2,
+			"type": 0
+			}
+		]
 	},
 "projectAttributes": {
 	"bowerAbbreviatedPath": "",
