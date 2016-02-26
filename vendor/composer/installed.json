@@ -835,48 +835,42 @@
         ]
     },
     {
-        "name": "google/apiclient",
-        "version": "1.1.7",
-        "version_normalized": "1.1.7.0",
+        "name": "gchartphp/gchartphp",
+        "version": "0.6.7",
+        "version_normalized": "0.6.7.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/google/google-api-php-client.git",
-            "reference": "400f250a30ae1dd4c4a0a4f750fe973fc70e6311"
+            "url": "https://github.com/aimfeld/gChartPhp.git",
+            "reference": "6d992c7536740c578b3e5a2685c46d79595e6c1a"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/google/google-api-php-client/zipball/400f250a30ae1dd4c4a0a4f750fe973fc70e6311",
-            "reference": "400f250a30ae1dd4c4a0a4f750fe973fc70e6311",
+            "url": "https://api.github.com/repos/aimfeld/gChartPhp/zipball/6d992c7536740c578b3e5a2685c46d79595e6c1a",
+            "reference": "6d992c7536740c578b3e5a2685c46d79595e6c1a",
             "shasum": ""
         },
-        "require": {
-            "php": ">=5.2.1"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "3.7.*",
-            "squizlabs/php_codesniffer": "~2.3"
-        },
-        "time": "2016-02-02 18:50:42",
+        "time": "2012-04-20 18:05:19",
         "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.1.x-dev"
-            }
-        },
         "installation-source": "dist",
         "autoload": {
-            "classmap": [
-                "src/"
-            ]
+            "psr-0": {
+                "gchart": ""
+            }
         },
         "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "Apache-2.0"
+        "authors": [
+            {
+                "name": "pacbard",
+                "homepage": "https://github.com/pacbard"
+            }
         ],
-        "description": "Client library for Google APIs",
-        "homepage": "http://developers.google.com/api-client-library/php",
+        "description": "PHP Object wrapper for the Google Chart API.",
+        "homepage": "https://github.com/pacbard/gChartPhp",
         "keywords": [
-            "google"
+            "Google Charts",
+            "charts",
+            "php",
+            "wrapper"
         ]
     }
 ]

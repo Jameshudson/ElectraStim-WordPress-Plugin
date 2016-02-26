@@ -14,16 +14,6 @@ class Setting {
 
 	public function __construct(){
 
-		// //page
-		//  $adminOptionPage = new \modules\library\wrappers\settings\AdminOptionPage();
-
-		//  $adminOptionPage->setPageTitle("ElectraStim Options");
-		//  $adminOptionPage->setMenuTitle("ElectraStim Options");
-		//  $adminOptionPage->setCapability("manage_options");
-		//  $adminOptionPage->setMenuSlug("electrastim-options");
-
-		//  $adminOptionPage->setCallback(array($this, "page" ));
-
 		 //section
 		 $this->adminOptionSection = new \modules\library\wrappers\settings\AdminOptionSection();
 
@@ -39,6 +29,7 @@ class Setting {
 		 $adminOptiionField->setId("test");
 		 $adminOptiionField->setTitle("test");
 		 $adminOptiionField->setCallback(array($this, "callback"));
+		$adminOptiionField->setSection("payment_tracker");
 
 		 $this->adminOptionSection->addOptionField($adminOptiionField);
 
@@ -61,10 +52,4 @@ class Setting {
 
 		echo "hello";
 	}
-
-	public function page(){
-
-		echo "hello world";
-	}
-
 }

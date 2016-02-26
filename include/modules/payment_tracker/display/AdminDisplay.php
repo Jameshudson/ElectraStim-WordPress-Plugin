@@ -32,7 +32,14 @@ class AdminDisplay{
 
 	public function displayCharts($os=array()){
 
-	    
+		$orderOS = new \modules\payment_tracker\order\OrderQuery();
+		$pieChart = new \gchart\gPieChart();
+
+		$pieChart->addDataSet(array_values($orderOS->getOSFromOrders()));
+		$pieChart->setLabels(array_keys($orderOS->getOSFromOrders()));
+ 		$pieChart->setLegend(array_keys($orderOS->getOSFromOrders()));
+
+ 		echo $pieChart->getImgCode();
 	}
 
 	private function getOrder(){
