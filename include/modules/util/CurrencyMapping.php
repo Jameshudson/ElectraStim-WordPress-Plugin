@@ -37,14 +37,13 @@ class CurrencyMapping{
         "FR", "DE", "EL", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL",
         "PT", "RO", "SK", "SI", "ES", "SE");
 
-    const GBPCountry = array("GB");
+    const GBPCountry = array("GB", "");
 
-    const AUDCountry = array("AU");
+    const AUDCountry = array("AU", "");
 
-    const CADCountry = array("CA");
+    const CADCountry = array("CA", "");
 
-    public function __construct()
-    {
+    public function __construct(){
 
         if (!get_option($this::USD_COUNTRIES)) {
 
@@ -53,22 +52,22 @@ class CurrencyMapping{
 
         if (!get_option($this::EURO_COUNTRIES)) {
 
-            add_option($this::EURO_COUNTRIES, EUROCountry);
+            add_option($this::EURO_COUNTRIES, $this::EUROCountry);
         }
 
         if (!get_option($this::GBP_COUNTRIES)) {
 
-            add_option($this::GBP_COUNTRIES, GBPCountry);
+            add_option($this::GBP_COUNTRIES, $this::GBPCountry);
         }
 
         if (!get_option($this::AUD_COUNTRIES)) {
 
-            add_option($this::AUD_COUNTRIES, AUDCountry);
+            add_option($this::AUD_COUNTRIES, $this::AUDCountry);
         }
 
         if (!get_option($this::CAD_COUNTRIES)) {
 
-            add_option($this::CAD_COUNTRIES, CADCountry);
+            add_option($this::CAD_COUNTRIES, $this::CADCountry);
         }
     }
 

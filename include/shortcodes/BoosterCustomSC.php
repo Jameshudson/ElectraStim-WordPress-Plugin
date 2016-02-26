@@ -41,15 +41,20 @@ class BoosterCustomSC extends shortcodes\library\Shortcode {
 
     public function wcj_order_total_tax( $atts ) {
 
+        $tax = new \modules\util\TaxPriceFormatter();
+
         $country = get_post_meta($this->order->id,'_billing_country',true);
 
         $order_total_tax = apply_filters( 'wcj_order_total_tax', $this->order->get_total_tax(), $this->order );
-        return format_price($this->order->get_total_tax(), $country, true);
+        return $tax->formatPrice($this->order->get_total_tax(), $country, true);
     }
 
     public function wcj_order_total_excl_tax(){
 
-        $taxable = checkTaxable(get_post_meta($this->order->id,'_billing_country',true));
+        $order_total = "";
+
+        $tax = new \modules\util\TaxPriceFormatter();
+        $taxable = $tax->checkTaxable(get_post_meta($this->order->id,'_billing_country',true));
 
         $order_total_tax = $this->order->get_total_tax();
 
@@ -58,7 +63,7 @@ class BoosterCustomSC extends shortcodes\library\Shortcode {
             $order_total = $this->order->get_total() - $order_total_tax;
         }
 
-        $order_total = apply_filters( 'wcj_order_total_excl_tax', $order_total, $this->the_order );
-        return format_price( $order_total, get_post_meta($this->order->id,'_billing_country',true), true);
+        $order_total = apply_filters( 'wcj_order_total_excl_tax', $order_total, $this->order );
+        return $tax->formatPrice( $order_total, get_post_meta($this->order->id,'_billing_country',true), true);
     }
 }

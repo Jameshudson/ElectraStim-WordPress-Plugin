@@ -32,8 +32,7 @@
   "autoload-dev": {
     "classmap": [
       "include/modules-test",
-      "include/shortcodes-test",
-      "include/util-test"
+      "include/shortcodes-test"
     ]
   }
 }
