@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 require_once ("vendor/autoload.php");
 
 new \modules\page_resrict\PageResrict();
-new \modules\comment_handler\CommentHandler();
+// new \modules\comment_handler\CommentHandler();
 new \modules\email_tax_statmant\EmailTaxStatment();
 //new braintree();
 new \modules\rma\RMA();
