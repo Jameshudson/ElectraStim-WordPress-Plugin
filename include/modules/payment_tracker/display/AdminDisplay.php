@@ -8,45 +8,40 @@
 
 namespace modules\payment_tracker\display;
 
+defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
-use modules\payment_tracker\util\Util;
+class AdminDisplay{
 
-class Display{
+	private $order;
 
-    private $plugin;
+    public function OrderViewDatails(){
 
-    public function __construct($plugin) {
+    	$order = $this->getOrder();
 
-        $this->plugin = $plugin;
-    }
-
-    public function addMenuItem(){
-
-
-    }
-
-    public function OrderViewDatails($order){
-
-		$this->plugin->getUserAgent = get_post_meta( $order->id, PaymentTracker::DEVICE, true );
-
-        $util = new Util();
-
+		$device = get_post_meta( $order->id, \modules\payment_tracker\PaymentTracker::DEVICE, true );
+        $util = new \modules\payment_tracker\util\Util();
 		?>
-
 			<p class="form-field form-field-wide">
 
-				<p>Device type: <?php echo get_post_meta( $order->id, PaymentTracker::DEVICE_TYPE, true ); ?> </p>
-				<p>Device: <?php echo $util->getOS($this->plugin->getOS()) ?> </p>
-				<p>Browser: <?php echo $util->getBrowser($this->plugin->getBrowser()) ?></p>
+				<p>Device type: <?php echo $device ?> </p>
+				<p>Device: <?php echo $util->getOS($device) ?> </p>
+				<p>Browser: <?php echo $util->getBrowser($device) ?></p>
 			</p>
 		<?php
 	}
 
-	private function displayCharts($os=array()){
+	public function displayCharts($os=array()){
 
-	    foreach($os as $key => $value){
+	    
+	}
 
-	        echo $key . " - " . ($value + 1) . "<br />";
-	    }
+	private function getOrder(){
+
+		if(isset($_GET['post'])){
+
+            $this->order = new \WC_Order(( 'shop_order' === get_post_type( $_GET['post'] ) ) ? wc_get_order( $_GET['post'] ) : null);
+        }
+
+        return $this->order;
 	}
 }

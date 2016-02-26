@@ -8,13 +8,63 @@
 
 namespace modules\payment_tracker;
 
+class Setting {
 
-use modules\library\PluginSettings;
+	private $adminOptionSection;
 
-class Setting extends PluginSettings{
+	public function __construct(){
 
-    public function init(){
+		// //page
+		//  $adminOptionPage = new \modules\library\wrappers\settings\AdminOptionPage();
 
-        $this->superInit();
-    }
+		//  $adminOptionPage->setPageTitle("ElectraStim Options");
+		//  $adminOptionPage->setMenuTitle("ElectraStim Options");
+		//  $adminOptionPage->setCapability("manage_options");
+		//  $adminOptionPage->setMenuSlug("electrastim-options");
+
+		//  $adminOptionPage->setCallback(array($this, "page" ));
+
+		 //section
+		 $this->adminOptionSection = new \modules\library\wrappers\settings\AdminOptionSection();
+
+		 $this->adminOptionSection->setId("payment_tracker");
+		 $this->adminOptionSection->setTitle("Payment Tracker Options");
+		 $this->adminOptionSection->setCallback(array($this, "payment"));
+
+		 // $adminOptionPage->addOptionSection($adminOptionSection);
+
+		 //field
+		 $adminOptiionField = new \modules\library\wrappers\settings\AdminOptionField();
+
+		 $adminOptiionField->setId("test");
+		 $adminOptiionField->setTitle("test");
+		 $adminOptiionField->setCallback(array($this, "callback"));
+
+		 $this->adminOptionSection->addOptionField($adminOptiionField);
+
+		 $this->adminOptionSection->setPage("general");
+
+		 add_action("admin_menu", array($this , "sectionsLoader"));
+	}
+
+	public function sectionsLoader(){
+
+		$this->adminOptionSection->init();
+	}
+
+	public function callback(){
+
+		echo "callback";
+	}
+
+	public function payment(){
+
+		echo "hello";
+	}
+
+	public function page(){
+
+		echo "hello world";
+	}
+
 }

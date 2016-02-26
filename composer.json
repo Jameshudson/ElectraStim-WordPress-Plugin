@@ -15,7 +15,8 @@
   "require":{
     "braintree/braintree_php": "3.8.0",
     "google/recaptcha": "1.1.2",
-    "neverwoods/validformbuilder": "~3.2"
+    "neverwoods/validformbuilder": "~3.2",
+    "google/apiclient": "1.1.7"
   },
 
   "require-dev":{
