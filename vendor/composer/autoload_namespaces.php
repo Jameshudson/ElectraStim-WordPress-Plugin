@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'gchart' => array($vendorDir . '/gchartphp/gchartphp'),
     'ValidFormBuilder' => array($vendorDir . '/neverwoods/validformbuilder/classes'),
     'Braintree' => array($vendorDir . '/braintree/braintree_php/lib'),
 );

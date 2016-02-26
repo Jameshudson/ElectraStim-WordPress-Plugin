@@ -8,7 +8,6 @@
 
 namespace modules\payment_tracker\order;
 
-
 class OrderHandler{
 
     private $user_agent = "Unknown";

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "35a5818de3d42562e065e525734e0b5a",
-    "content-hash": "0536e430a204443a2fc275c383104be8",
+    "hash": "37c0e12b844e1fd2dece06225f35e7a4",
+    "content-hash": "77159c675604b61127b2ad804e86f8e5",
     "packages": [
         {
             "name": "braintree/braintree_php",
@@ -53,6 +53,43 @@
             ],
             "description": "Braintree PHP Client Library",
             "time": "2016-01-15 19:52:01"
+        },
+        {
+            "name": "gchartphp/gchartphp",
+            "version": "0.6.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aimfeld/gChartPhp.git",
+                "reference": "6d992c7536740c578b3e5a2685c46d79595e6c1a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/aimfeld/gChartPhp/zipball/6d992c7536740c578b3e5a2685c46d79595e6c1a",
+                "reference": "6d992c7536740c578b3e5a2685c46d79595e6c1a",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "gchart": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "pacbard",
+                    "homepage": "https://github.com/pacbard"
+                }
+            ],
+            "description": "PHP Object wrapper for the Google Chart API.",
+            "homepage": "https://github.com/pacbard/gChartPhp",
+            "keywords": [
+                "Google Charts",
+                "charts",
+                "php",
+                "wrapper"
+            ],
+            "time": "2012-04-20 18:05:19"
         },
         {
             "name": "google/recaptcha",
@@ -615,16 +652,16 @@
         },
         {
             "name": "sebastian/environment",
-            "version": "1.3.3",
+            "version": "1.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/environment.git",
-                "reference": "6e7133793a8e5a5714a551a8324337374be209df"
+                "reference": "22aa49baa48886f40b060e061a7967436f44a249"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/6e7133793a8e5a5714a551a8324337374be209df",
-                "reference": "6e7133793a8e5a5714a551a8324337374be209df",
+                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/22aa49baa48886f40b060e061a7967436f44a249",
+                "reference": "22aa49baa48886f40b060e061a7967436f44a249",
                 "shasum": ""
             },
             "require": {
@@ -661,7 +698,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2015-12-02 08:37:27"
+            "time": "2016-02-26 11:40:57"
         },
         {
             "name": "sebastian/exporter",
