@@ -8,7 +8,6 @@
 
 namespace modules\rma;
 
-
 class RMA{
 
     private $rmaHandler;
@@ -25,9 +24,6 @@ class RMA{
         //creating url handler.
         $this->rmaHandler = new \modules\rma\RMAHandler();
 
-        //adds the custom post type.
-        add_action("init", array( $this, "customPostType"));
-
         if(is_admin()){
 
             //gets the current RMA's post id.
@@ -36,26 +32,33 @@ class RMA{
 
         //runs the method "initActivation" when the plugin is activated.
         register_activation_hook( __FILE__, array($this->rmaHandler, "initActivation"));
-    }
 
-    /*
-     * Creates the custom post type called "RMA"
-     */
-    public function customPostType(){
+        $RMAType = new \modules\library\wrappers\post\CustomPostType();
 
-        register_post_type( 'RMA',
-            array(
-                'labels' => array(
-                    'name' => __( 'RMA' ),
-                    'singular_name' => __( 'RMA' )
-                ),
-                'public' => true,
-                'has_archive' => true,
-                'rewrite' => array('slug' => 'returns'),
-                'supports' => array('title', 'editor', 'thumbnail'),
-                'show_ui' => true
-            )
-        );
+        $RMAType->setName('RMA');
+
+        //creating Post type object.
+        $RMALabel = new \modules\library\wrappers\post\CustomPostLabel();
+
+        //creating Label object.
+        $RMALabel->setName('RMA');
+        $RMALabel->getSingelarName("RMA");
+
+        //adding the Label object to the post type.
+        $RMAType->setLabel($RMALabel);
+
+        $RMAType->setPublic(true);
+        $RMAType->setHasArchive(true);
+        $RMAType->setShowUi(true);
+
+        //adding rewrite rules.
+        $rewrite = new \modules\library\wrappers\post\CustomPostRewrite();
+        $rewrite->setSlug('returns');
+
+        //adding the rewrite rules to the post type.
+        $RMAType->setRewrite($rewrite);
+
+        $RMAType->setSupport(array('title', 'editor'));
     }
 
     /*

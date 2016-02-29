@@ -25,19 +25,19 @@ class CustomPostLabel{
 		return $results;
 	}
 
-	public getName(){
+	public function getName(){
 		return $this->name;
 	}
 
-	public setName($name=""){
+	public function setName($name=""){
 		$this->name = $name;
 	}
 
-	public getSingelarName(){
+	public function getSingelarName(){
 		return $this->singularName;
 	}
 
-	public setSingularName($singularName=""){
+	public function setSingularName($singularName=""){
 		$this->singularName = $singularName;
 	}
 }

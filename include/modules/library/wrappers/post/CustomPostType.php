@@ -16,6 +16,9 @@ class CustomPostType{
 	private $label = null;//CustomPostLabel
 	
 	function __construct(){
+
+		$this->rewrite = new CustomPostLabel();
+		$this->label = new CustomPostRewrite();
 		
 		add_action("init", array( $this, "init"));
 	}
@@ -23,13 +26,14 @@ class CustomPostType{
 	public function init(){
 
 		register_post_type(
-			$this->name,
-			$this->label->getLabels(),
-			$this->public,
-			$this->hasArchive,
-			$this->rewrite->getLabels(),
-			$this->showUi,
-			$this->support):
+			$this->name, 
+			array(
+			    'labels' => $this->label->getLabels(),
+				'public' =>$this->public,
+				'has_archive' => $this->hasArchive,
+				'rewrite' => $this->rewrite->getLabels(),
+				'show_ui' => $this->showUi,
+				'supports' => $this->support));
 	}
 
 	//getters and setters.
@@ -75,6 +79,22 @@ class CustomPostType{
 
 	public function getSupport(){
 		return $this->support;
+	}
+
+	public function setRewrite($rewrite){
+		$this->rewrite = $rewrite;
+	}
+
+	public function getRewrite(){
+		return $this->rewrite;
+	}
+
+	public function setLabel($label){
+		$this->label = $label;
+	}
+
+	public function getLabel(){
+		return $this->label;
 	}
 }
 ?>
