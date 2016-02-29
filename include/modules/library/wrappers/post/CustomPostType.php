@@ -1,0 +1,80 @@
+<?php  
+
+namespace modules\library\wrappers\post;
+
+class CustomPostType{
+
+	private $name = "";
+
+	private $public = false;
+	private $hasArchive = false;
+	private $showUi = false;
+
+	private $support = array();
+
+	private $rewrite = null;//CustomPostRewrite
+	private $label = null;//CustomPostLabel
+	
+	function __construct(){
+		
+		add_action("init", array( $this, "init"));
+	}
+
+	public function init(){
+
+		register_post_type(
+			$this->name,
+			$this->label->getLabels(),
+			$this->public,
+			$this->hasArchive,
+			$this->rewrite->getLabels(),
+			$this->showUi,
+			$this->support):
+	}
+
+	//getters and setters.
+	public function setName($name){
+		$this->name = $name;
+	}
+
+	public function getName(){
+		return $this->name;
+	}
+
+	public function getPublic(){
+		return $this->public;
+	}
+
+	public function setPublic($isPublic=false){
+		$this->public = $isPublic;
+	}
+
+	public function getHasArchive(){
+		return $this->hasArchive;
+	}
+
+	public function setHasArchive($hasArchive=false){
+		$this->hasArchive = $hasArchive;
+	}
+
+	public function addLabel($label=null){
+		$this->label = $label;
+	}
+
+	public function getShowUi(){
+		return $this->showUi;
+	}
+
+	public function setShowUi($showUi=false){
+		$this->showUi = $showUi;
+	}
+
+	public function setSupport($support=array()){
+		$this->support = $support;
+	}
+
+	public function getSupport(){
+		return $this->support;
+	}
+}
+?>
