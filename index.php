@@ -29,6 +29,8 @@ new \modules\payment_tracker\PaymentTracker($menuTest);
 new \modules\product_list\ProductsList();
 new \modules\user_register\UserRegister();
 
+new \modules\email_preview\EmailPreview();
+
 new \modules\util\ClientScriptsStyles();
 
 
