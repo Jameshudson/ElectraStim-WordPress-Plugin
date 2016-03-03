@@ -432,6 +432,7 @@ return array(
     'SebastianBergmann\\Exporter\\Exporter' => $vendorDir . '/sebastian/exporter/src/Exporter.php',
     'SebastianBergmann\\Version' => $vendorDir . '/sebastian/version/src/Version.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
+    'modules\\email_preview\\EmailPreview' => $baseDir . '/include/modules/email_preview/EmailPreview.php',
     'modules\\email_tax_statmant\\EmailTaxStatment' => $baseDir . '/include/modules/email_tax_statment/EmailTaxStatment.php',
     'modules\\email_tax_statmant\\Setting' => $baseDir . '/include/modules/email_tax_statment/Setting.php',
     'modules\\library\\PluginSettings' => $baseDir . '/include/modules/library/PluginSettings.php',
