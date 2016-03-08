@@ -31,7 +31,15 @@ new \modules\user_register\UserRegister();
 
 new \modules\email_preview\EmailPreview();
 
-new \modules\util\ClientScriptsStyles();
+$styles = new \modules\util\ClientScriptsStyles();
+
+//adding styles
+$styles->addStyles('electrastim-plugin-css', plugins_url( 'electrastim/res/main.css' ));
+$styles->addAdminStyles('electrastim-plugi-admin-css', plugins_url( 'electrastim/res/admin-main.css' ));
+
+//adding js
+$styles->addScript("electrastim-plugin-js", plugins_url( 'electrastim/res/main.js' ));
+$styles->addAdminScript("electrastim-plugin-admin-js", plugins_url( 'electrastim/res/admin-main.js' ));
 
 
 //shortcodes
