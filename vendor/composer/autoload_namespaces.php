@@ -7,6 +7,11 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'gchart' => array($vendorDir . '/gchartphp/gchartphp'),
+    'cli' => array($vendorDir . '/wp-cli/php-cli-tools/lib'),
+    'WP_CLI' => array($vendorDir . '/wp-cli/wp-cli/php'),
     'ValidFormBuilder' => array($vendorDir . '/neverwoods/validformbuilder/classes'),
+    'Requests' => array($vendorDir . '/rmccue/requests/library'),
+    'Oxymel' => array($vendorDir . '/nb/oxymel'),
+    'Mustache' => array($vendorDir . '/mustache/mustache/src'),
     'Braintree' => array($vendorDir . '/braintree/braintree_php/lib'),
 );

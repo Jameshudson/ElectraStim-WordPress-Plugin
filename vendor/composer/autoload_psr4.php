@@ -8,6 +8,14 @@ $baseDir = dirname($vendorDir);
 return array(
     'Volnix\\CSRF\\' => array($vendorDir . '/volnix/csrf/src'),
     'Symfony\\Component\\Yaml\\' => array($vendorDir . '/symfony/yaml'),
+    'Symfony\\Component\\Translation\\' => array($vendorDir . '/symfony/translation'),
+    'Symfony\\Component\\Finder\\' => array($vendorDir . '/symfony/finder'),
+    'Symfony\\Component\\Filesystem\\' => array($vendorDir . '/symfony/filesystem'),
+    'Symfony\\Component\\EventDispatcher\\' => array($vendorDir . '/symfony/event-dispatcher'),
+    'Symfony\\Component\\DependencyInjection\\' => array($vendorDir . '/symfony/dependency-injection'),
+    'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),
+    'Symfony\\Component\\Config\\' => array($vendorDir . '/symfony/config'),
     'ReCaptcha\\' => array($vendorDir . '/google/recaptcha/src/ReCaptcha'),
+    'Composer\\Semver\\' => array($vendorDir . '/composer/semver/src'),
     'Braintree\\' => array($vendorDir . '/braintree/braintree_php/lib/Braintree'),
 );
