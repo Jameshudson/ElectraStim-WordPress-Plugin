@@ -18,13 +18,13 @@ class OrderHandler{
 
         if(wp_is_mobile()){//The payment WAS made on a mobile device.
 
-            update_post_meta( $order_id, PaymentTracker::DEVICE_TYPE, 'Mobile');
+            update_post_meta( $order_id, 'device_type', 'Mobile');
         }else{//The payment WAS NOT made on a mobile device.
 
-            update_post_meta( $order_id, PaymentTracker::DEVICE_TYPE, 'Desktop');
+            update_post_meta( $order_id, 'device_type', 'Desktop');
         }
 
-        update_post_meta($order_id, PaymentTracker::DEVICE, $this->user_agent);
+        update_post_meta($order_id, 'device', $this->user_agent);
     }
 
 }
