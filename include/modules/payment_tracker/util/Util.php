@@ -8,6 +8,7 @@
 
 namespace modules\payment_tracker\util;
 
+defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 class Util{
 

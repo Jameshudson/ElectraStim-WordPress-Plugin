@@ -8,6 +8,8 @@
 
 namespace modules\payment_tracker;
 
+defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
+
 class Setting {
 
 	private $adminOptionSection;

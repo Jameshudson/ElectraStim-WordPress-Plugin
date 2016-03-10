@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name:Do Not Deactivate
+Plugin Name: ElectraStim 
 Plugin URI: https://www.electrastim.com
-Version: 1.5
+Version: 0.5
 Author: James Hudson
 */
 
@@ -28,6 +28,8 @@ new \modules\rma\RMA();
 new \modules\payment_tracker\PaymentTracker($menuTest);
 new \modules\product_list\ProductsList();
 new \modules\user_register\UserRegister();
+
+new \modules\worldpay\WorldPay();
 
 new \modules\util\ClientScriptsStyles();
 

@@ -8,7 +8,6 @@
 
 namespace modules\rma;
 
-
 class RMA{
 
     private $rmaHandler;
@@ -19,8 +18,6 @@ class RMA{
         add_action("admin_init", array($setting, "init"));
 
         //setting plugin name.
-        $setting->setName("RMA form");
-        $setting->setId("RMA");
 
         //creating url handler.
         $this->rmaHandler = new \modules\rma\RMAHandler();

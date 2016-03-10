@@ -14,7 +14,18 @@ class WorldPay{
 
 	public function worldpay($worldpay_args, $order){
 
-		
+		$currentMap = new \modules\util\CurrencyMapping();
+
+		if(in_array(get_post_meta($order->id,'_billing_country',true), $currentMap->getGBPCountries())){
+
+			$worldpay_args['currency'] = "GBP";
+		}else{
+
+			$worldpay_args['currency'] = "USD";
+		}
+
+		var_dump($worldpay_args);
+		return $worldpay_args;
 	}
 }
 

@@ -469,6 +469,7 @@ return array(
     'modules\\util\\ClientScriptsStyles' => $baseDir . '/include/modules/util/ClientScriptsStyles.php',
     'modules\\util\\CurrencyMapping' => $baseDir . '/include/modules/util/CurrencyMapping.php',
     'modules\\util\\TaxPriceFormatter' => $baseDir . '/include/modules/util/TaxPriceFormatter.php',
+    'modules\\worldpay\\WorldPay' => $baseDir . '/include/modules/worldpay/WorldPay.php',
     'shortcode\\rma\\RMAFormSC' => $baseDir . '/include/shortcodes/rma/RMAFormSC.php',
     'shortcodes\\library\\Shortcode' => $baseDir . '/include/shortcodes/library/Shortcode.php',
     'shortcodes\\rma\\form\\RMAComplete' => $baseDir . '/include/shortcodes/rma/form/RMAComplete.php',

@@ -8,6 +8,7 @@
 
 namespace modules\payment_tracker\order;
 
+defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 use modules\payment_tracker\order;
 
