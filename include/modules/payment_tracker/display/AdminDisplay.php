@@ -18,7 +18,7 @@ class AdminDisplay{
 
     	$order = $this->getOrder();
 
-		$device = get_post_meta( $order->id, \modules\payment_tracker\PaymentTracker::DEVICE, true );
+		$device = get_post_meta( $order->id, \modules\payment_tracker\PaymentTracker::DEVICE_TYPE, true );
         $util = new \modules\payment_tracker\util\Util();
 		?>
 			<p class="form-field form-field-wide">
